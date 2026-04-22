@@ -1,0 +1,115 @@
+{
+  "theme": "Light",
+  "archetype": "Archetype 1 (Organic & Earthy)",
+  "concept": "Warm, mission-focused editorial aesthetic evoking Arequipa (the 'White City'). Focus on sillar stone textures, volcanic landscapes, and Andean warmth. Generous spacing, intentional asymmetry, and no generic SaaS gradients.",
+  "typography": {
+    "font_families": {
+      "heading": "Cormorant Garamond",
+      "body": "Outfit"
+    },
+    "hierarchy": {
+      "h1_hero": "text-5xl sm:text-6xl lg:text-7xl font-light tracking-tighter leading-none",
+      "h2_section": "text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight",
+      "h3_card": "text-2xl sm:text-3xl font-medium",
+      "body": "text-base lg:text-lg leading-relaxed",
+      "overline": "text-xs uppercase tracking-[0.2em] font-semibold"
+    },
+    "rules": [
+      "Headings strictly use Cormorant Garamond for an elegant, rooted, and historic feel.",
+      "Never center paragraphs. Left-align dense text for readability.",
+      "Use Outfit for all interactive elements, body text, and small labels."
+    ]
+  },
+  "color_palette": {
+    "backgrounds": {
+      "primary": "#FAFAF8",
+      "secondary": "#F2EFE9",
+      "accent_container": "#EAE5D9"
+    },
+    "text": {
+      "primary": "#2C2B29",
+      "secondary": "#5C5A56",
+      "inverse": "#FAFAF8"
+    },
+    "brand_accents": {
+      "terracotta": "#C05A45",
+      "andean_ochre": "#D99058",
+      "deep_olive": "#4A4F41"
+    },
+    "states": {
+      "hover_bg": "#A64A38",
+      "hover_text": "#FFFFFF",
+      "focus_ring": "#C05A45"
+    },
+    "rules": [
+      "No generic purple or teal.",
+      "Pure #000000 and #FFFFFF are banned. Always use the off-white (Sillar) or charcoal (Volcanic).",
+      "Use Terracotta strictly for primary CTAs and active states."
+    ]
+  },
+  "spacing_and_layout": {
+    "grid_system": "Bento Grid Mode A (Tetris Grid) for visual sections, emphasizing asymmetry and tension. Combine span-4 and span-8 items.",
+    "section_padding": "py-20 md:py-32",
+    "container_padding": "px-6 md:px-12",
+    "card_padding": "p-8 md:p-12",
+    "rules": [
+      "Adopt generous spacing. Use 2x standard padding.",
+      "Containers with borders must use internal padding to prevent collision.",
+      "Prioritize optical alignment over geometric alignment."
+    ]
+  },
+  "motion_and_interactions": {
+    "scrolling": "Lenis for smooth scrolling, giving momentum and weight to the layout.",
+    "hover_states": "Slight lift (-translate-y-1) and subtle shadow addition for interactive cards. Explicitly define hover text colors.",
+    "image_reveal": "Use Framer Motion to softly fade and clip-path reveal images on scroll."
+  },
+  "component_strategies": {
+    "navigation": "Sticky glassmorphism header (backdrop-blur-xl bg-[#FAFAF8]/70) with a delicate bottom border (border-[#2C2B29]/10).",
+    "hero": "Full-bleed or massive rounded container. Image overlay must be bg-black/30 maximum, or a gradient fade from black/60 at the bottom to transparent at the top to ensure white text readability.",
+    "cards": "Avoid standard drop-shadow cards. Use flat backgrounds (secondary or accent_container) with no borders, OR 1px subtle borders on primary background. No rounded corners greater than rounded-xl.",
+    "forms": "Shadcn components heavily customized to remove the 'Vercel look'. Use square corners or slightly rounded (rounded-sm), warm grey borders, and Terracotta focus rings.",
+    "timeline": "For itinerary: A vertical tracking line (border-l-2 border-terracotta/30) with terracotta dots for each day.",
+    "buttons": "Primary: Solid Terracotta background, inverse text, square or slightly rounded. Hover: Darker terracotta. Secondary: Outline with charcoal text."
+  },
+  "media": {
+    "hero_bg": {
+      "url": "https://images.unsplash.com/photo-1717420564498-1c856a721305?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwyfHxhcmVxdWlwYSUyMHBlcnUlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzc2ODk0NDU2fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Stunning view of a mountain through a colonial arch, perfect for the main hero."
+    },
+    "about_volcano": {
+      "url": "https://images.pexels.com/photos/19677738/pexels-photo-19677738.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Dramatic view of El Misti Volcano."
+    },
+    "about_architecture": {
+      "url": "https://images.pexels.com/photos/33679718/pexels-photo-33679718.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Historic colonial arches of Arequipa."
+    },
+    "culture_textile": {
+      "url": "https://images.pexels.com/photos/24645287/pexels-photo-24645287.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Intricate handmade Andean textiles."
+    },
+    "team_volunteers": {
+      "url": "https://images.pexels.com/photos/6647011/pexels-photo-6647011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Volunteers working in the community."
+    }
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure all text over images uses text-shadow or overlays to meet APCA contrast ratios.",
+    "data_testid_rules": "All interactive elements (buttons, links, forms, inputs) MUST include a data-testid attribute in kebab-case based on role (e.g., data-testid='hero-cta-button', data-testid='contact-form-submit')."
+  },
+  "tech_stack": [
+    "React.js",
+    "Tailwind CSS",
+    "Shadcn UI (customized)",
+    "Framer Motion",
+    "Lucide React"
+  ],
+  "instructions_to_main_agent": [
+    "Implement the landing page using the exact media URLs provided.",
+    "Do not use generic tech-bro gradients. Stick strictly to the Organic & Earthy palette.",
+    "Install and use Cormorant Garamond and Outfit from Google Fonts.",
+    "Ensure the contact form and prayer request sections use customized Shadcn form components, styled to match the warm Sillar/Terracotta theme.",
+    "Apply `data-testid` to all functional components.",
+    "For the About Arequipa section, use the Bento Grid Mode A layout to mix text blocks with the volcano, architecture, and textile images."
+  ]
+}
