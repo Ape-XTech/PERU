@@ -105,15 +105,6 @@ async def create_contact(payload: ContactCreate):
     return contact
 
 
-@api_router.get("/contact", response_model=List[Contact])
-async def list_contacts():
-    rows = await db.contacts.find({}, {"_id": 0}).sort("created_at", -1).to_list(500)
-    for r in rows:
-        if isinstance(r.get('created_at'), str):
-            r['created_at'] = datetime.fromisoformat(r['created_at'])
-    return rows
-
-
 # ----- Prayer Requests -----
 @api_router.post("/prayer-requests", response_model=PrayerRequest)
 async def create_prayer_request(payload: PrayerRequestCreate):
