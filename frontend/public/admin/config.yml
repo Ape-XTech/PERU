@@ -1,0 +1,34 @@
+backend:
+  name: github
+    repo: Ape-XTech/PERU
+      branch: main
+        auth_endpoint: api/auth
+
+        media_folder: frontend/public/images
+        public_folder: /images
+
+        collections:
+          - name: "pages"
+              label: "Pages"
+                  folder: "frontend/src/content/pages"
+                      create: true
+                          slug: "{{slug}}"
+                              fields:
+                                    - { label: "Title", name: "title", widget: "string" }
+                                          - { label: "Slug", name: "slug", widget: "string" }
+                                                - { label: "Description", name: "description", widget: "string" }
+                                                      - { label: "Content", name: "body", widget: "markdown" }
+                                                            - { label: "Publish Date", name: "date", widget: "datetime" }
+
+                                                              - name: "blog"
+                                                                  label: "Blog Posts"
+                                                                      folder: "frontend/src/content/blog"
+                                                                          create: true
+                                                                              slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+                                                                                  fields:
+                                                                                        - { label: "Title", name: "title", widget: "string" }
+                                                                                              - { label: "Author", name: "author", widget: "string" }
+                                                                                                    - { label: "Publish Date", name: "date", widget: "datetime" }
+                                                                                                          - { label: "Featured Image", name: "image", widget: "image" }
+                                                                                                                - { label: "Content", name: "body", widget: "markdown" }
+                                                                                                                      - { label: "Tags", name: "tags", widget: "list" }
